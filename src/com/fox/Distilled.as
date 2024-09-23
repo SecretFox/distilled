@@ -37,11 +37,11 @@ class com.fox.Distilled
 			}
 			if ( newData.m_RealType >= 30151 && newData.m_RealType <= 30154 && newData.m_XP)
 			{
-				var XPTest:MovieClip = this["XPText"];
-				if (!XPTest)
+				var XPText:MovieClip = this["XPText"];
+				if (!XPText)
 				{
-					XPTest = this.createEmptyMovieClip("XPText", this.getNextHighestDepth());
-					var text:TextField = XPTest.createTextField("text", XPTest.getNextHighestDepth(), 0, this.m_Background._height-18, this.m_Background._width, 1);
+					XPText = this.createEmptyMovieClip("XPText", this.getNextHighestDepth());
+					var text:TextField = XPText.createTextField("text", XPText.getNextHighestDepth(), 0, this.m_Background._height-18, this.m_Background._width, 1);
 					text.autoSize = "center";
 					var format:TextFormat = new TextFormat("_StandardFont", 14, 0xFFFFFF, true);
 					text.setTextFormat(format);
@@ -52,19 +52,19 @@ class com.fox.Distilled
 				
 				if ( newData.m_XP <= DistributedValueBase.GetDValue("distilled_low"))
 				{
-					TextField(XPTest.text).textColor = 0xFB0006;
+					TextField(XPText.text).textColor = 0xFB0006;
 				}
 				else
 				{
-					TextField(XPTest.text).textColor = 0xFFFFFF;
+					TextField(XPText.text).textColor = 0xFFFFFF;
 				}
 				if ( newData.m_XP < 1000)
 				{
-					XPTest.text.text = newData.m_XP;
+					XPText.text.text = newData.m_XP;
 				}
 				else
 				{
-					XPTest.text.text = Math.round(newData.m_XP / 1000 * 10 ) / 10 + "k";
+					XPText.text.text = Math.round(newData.m_XP / 100) / 10 + "k";
 				}
 			}
 			else
