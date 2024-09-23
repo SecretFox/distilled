@@ -32,7 +32,6 @@ class com.fox.Distilled
 		var org = _global.com.Components.ItemComponent.prototype.SetData;
 		var f:Function = function(newData:InventoryItem, iconLoadDelay:Number, firstRun:Boolean)
 		{
-			this.SetDataOrg.apply(this, arguments);
 			if ( !firstRun ) {
 				org.apply(this, arguments);
 			}
