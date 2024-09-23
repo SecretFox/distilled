@@ -24,7 +24,7 @@ class com.fox.Distilled
 			setTimeout(Delegate.create(this, OnLoad), 100);
 			return;
 		}
-		if ( _global.com.Components.ItemComponent.prototype.SetDataOrg)
+		if ( _global.com.Components.ItemComponent.DistillateHook)
 		{
 			return;
 		}
@@ -87,5 +87,6 @@ class com.fox.Distilled
 				}
 			}
 		}
+		_global.com.Components.ItemComponent.DistillateHook = true;
 	}
 }
